@@ -5,7 +5,7 @@ import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import NavBar from "./Components/NavBar/NavBar";
 
 class App extends Component {
-  constuctor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       products: [],
@@ -26,12 +26,14 @@ class App extends Component {
       });
   }
   addToCart(item) {
+    let newcart = this.state.cart
+    newcart.push(item)
     this.setState({
-      cart: item
+      cart: newcart
     });
   }
   removeFromCart(index) {
-    let cartCopy = this.state.products.slice();
+    let cartCopy = this.state.cart.slice();
     cartCopy.splice(index, 1);
     this.setState({
       cart: cartCopy
@@ -49,6 +51,7 @@ class App extends Component {
     }
   }
   render() {
+    // console.log(this.state.cart)
     const { products, cart, showCart } = this.state;
     return (
       <div className="App">

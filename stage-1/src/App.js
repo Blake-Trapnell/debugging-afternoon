@@ -3,7 +3,6 @@ import StoreFront from "./Components/StoreFront/StoreFront";
 import ShoppingCart from "./Components/ShoppingCart/ShoppingCart";
 import NavBar from "./Components/NavBar/NavBar";
 import axios from "axios";
-import cart from "./Components/ShoppingCart/ShoppingCart";
 
 class App extends Component {
   constructor(props) {
